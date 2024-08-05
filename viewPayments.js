@@ -21,22 +21,18 @@ function calculateStats(data) {
     const stats = {
         shijas: { count: 0, total: 0 },
         swalih: { count: 0, total: 0 },
-        sabth: { count: 0, total: 0 },
-        sabith: { count: 0, total: 0 },  // Added sabith
+        sabith: { count: 0, total: 0 },
         nishad: { count: 0, total: 0 }
     };
     let totalAmount = 0;
 
     data.forEach(item => {
-        console.log('Processing item:', item);  // Debugging line
         if (stats.hasOwnProperty(item.paidBy)) {
             stats[item.paidBy].count++;
             stats[item.paidBy].total += parseFloat(item.amount);
         }
         totalAmount += parseFloat(item.amount);
     });
-
-    console.log('Stats:', stats);  // Debugging line
 
     return { stats, totalAmount };
 }
@@ -79,19 +75,11 @@ onValue(paymentsRef, (snapshot) => {
     const shijasAmountElem = document.getElementById('shijasAmount');
     const swalihCountElem = document.getElementById('swalihCount');
     const swalihAmountElem = document.getElementById('swalihAmount');
-    const sabthCountElem = document.getElementById('sabthCount');
-    const sabthAmountElem = document.getElementById('sabthAmount');
-    const sabithCountElem = document.getElementById('sabithCount');  // Added sabith
-    const sabithAmountElem = document.getElementById('sabithAmount');  // Added sabith
+    const sabithCountElem = document.getElementById('sabithCount');
+    const sabithAmountElem = document.getElementById('sabithAmount');
     const nishadCountElem = document.getElementById('nishadCount');
     const nishadAmountElem = document.getElementById('nishadAmount');
     const totalAmountElem = document.getElementById('totalAmount');
-
-    if (!tableBody || !shijasCountElem || !shijasAmountElem || !swalihCountElem || !swalihAmountElem ||
-        !sabthCountElem || !sabthAmountElem || !sabithCountElem || !sabithAmountElem || !nishadCountElem || !nishadAmountElem || !totalAmountElem) {
-        console.error('One or more elements are missing.');
-        return;
-    }
 
     tableBody.innerHTML = ''; // Clear existing data
 
@@ -113,10 +101,8 @@ onValue(paymentsRef, (snapshot) => {
     shijasAmountElem.textContent = stats.shijas.total.toFixed(2);
     swalihCountElem.textContent = stats.swalih.count;
     swalihAmountElem.textContent = stats.swalih.total.toFixed(2);
-    sabthCountElem.textContent = stats.sabth.count;
-    sabthAmountElem.textContent = stats.sabth.total.toFixed(2);
-    sabithCountElem.textContent = stats.sabith.count;  // Added sabith
-    sabithAmountElem.textContent = stats.sabith.total.toFixed(2);  // Added sabith
+    sabithCountElem.textContent = stats.sabith.count;
+    sabithAmountElem.textContent = stats.sabith.total.toFixed(2);
     nishadCountElem.textContent = stats.nishad.count;
     nishadAmountElem.textContent = stats.nishad.total.toFixed(2);
     totalAmountElem.textContent = totalAmount.toFixed(2);
@@ -140,16 +126,8 @@ onValue(paymentsRef, (snapshot) => {
     });
 });
 
-// Ensure XLSX library is included in your HTML
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
-
 // Export to Excel functionality
 document.getElementById('exportBtn').addEventListener('click', () => {
-    if (typeof XLSX === 'undefined') {
-        alert('XLSX library is not loaded. Please include the XLSX library.');
-        return;
-    }
-    
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.table_to_sheet(document.getElementById('paymentsTable'));
     XLSX.utils.book_append_sheet(wb, ws, 'Payments');
