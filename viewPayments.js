@@ -34,6 +34,10 @@ function calculateStats(data) {
         totalAmount += parseFloat(item.amount);
     });
 
+    // Debugging output
+    console.log('Stats:', stats);
+    console.log('Total Amount:', totalAmount);
+
     return { stats, totalAmount };
 }
 
@@ -97,6 +101,12 @@ onValue(paymentsRef, (snapshot) => {
     });
 
     const { stats, totalAmount } = calculateStats(paymentsData);
+
+    // Debugging output
+    console.log('Shijas Stats:', stats.shijas);
+    console.log('Swalih Stats:', stats.swalih);
+    console.log('Sabth Stats:', stats.sabth);
+    console.log('Nishad Stats:', stats.nishad);
 
     shijasCountElem.textContent = stats.shijas.count;
     shijasAmountElem.textContent = stats.shijas.total.toFixed(2);
