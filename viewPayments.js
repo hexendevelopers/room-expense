@@ -65,6 +65,7 @@ function savePaymentData(key, data) {
         alert('Data updated successfully');
     }).catch((error) => {
         console.error('Error updating data:', error);
+        alert('Failed to update data. Please try again.');
     });
 }
 
@@ -128,6 +129,11 @@ onValue(paymentsRef, (snapshot) => {
 
 // Export to Excel functionality
 document.getElementById('exportBtn').addEventListener('click', () => {
+    if (typeof XLSX === 'undefined') {
+        alert('XLSX library is not loaded. Please include the XLSX library.');
+        return;
+    }
+    
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.table_to_sheet(document.getElementById('paymentsTable'));
     XLSX.utils.book_append_sheet(wb, ws, 'Payments');
