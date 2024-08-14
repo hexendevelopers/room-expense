@@ -19,7 +19,7 @@
             z-index: 9999;
         }
         #loading img {
-            width: 100%;
+            width: 90%;
             height: 100%;
         }
     </style>
@@ -60,12 +60,7 @@
         <button id="btn" class="mt-4 w-full bg-gray-800 text-white py-2 px-4 rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">View Payments</button>
     </div>
     
-    <script>
-        // Wait for 3 seconds and then hide the loading screen
-        setTimeout(function() {
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('content').classList.remove('hidden');
-        }, 3000);
-    </script>
+  
+    <script type="module" src="app.js"></script>
 </body>
 </html>
