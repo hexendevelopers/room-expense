@@ -44,3 +44,10 @@ let btn = document.getElementById("btn");
 btn.addEventListener("click", () => {
     window.location.href = "viewPayments.html";
 });
+
+
+ // Wait for 3 seconds and then hide the loading screen
+ setTimeout(function() {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('content').classList.remove('hidden');
+}, 3000);
