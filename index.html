@@ -54,7 +54,7 @@
 </head>
 <body>
     <!-- Spline viewer background -->
-    <spline-viewer class="spline-background" url="https://prod.spline.design/T0IOnqPgTOUg9Dfh/scene.splinecode"></spline-viewer>
+    <spline-viewer class="spline-background" url="https://prod.spline.design/wviEXB-3MgHxvZkz/scene.splinecode"></spline-viewer>
 
     <!-- Loading screen -->
     <div id="loading">
@@ -68,17 +68,17 @@
             <form id="inputForm" class="space-y-4">
                 <div>
                     <label for="purpose" class="block text-sm font-medium text-gray-300">Purpose:</label>
-                    <input type="text" id="purpose" name="purpose" class="mt-1 block w-full px-3 py-2 bg-gray-900 bg-opacity-40 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white" placeholder="Enter purpose" required>
+                    <input type="text" id="purpose" name="purpose" class="mt-1 block w-full px-3 py-2 bg-black bg-opacity-40 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white" placeholder="Enter purpose" required>
                 </div>
 
                 <div>
                     <label for="amount" class="block text-sm font-medium text-gray-300">Amount:</label>
-                    <input type="number" id="amount" name="amount" class="mt-1 block w-full px-3 py-2 bg-gray-900 bg-opacity-40 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white" placeholder="Enter amount" required>
+                    <input type="number" id="amount" name="amount" class="mt-1 block w-full px-3 py-2 bg-black bg-opacity-40 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white" placeholder="Enter amount" required>
                 </div>
 
                 <div>
                     <label for="options" class="block text-sm font-medium text-gray-300">Paid by:</label>
-                    <select id="options" name="options" class="mt-1 block w-full px-3 py-2 bg-gray-900 bg-opacity-40 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white" required>
+                    <select id="options" name="options" class="mt-1 block w-full px-3 py-2 bg-black bg-opacity-40 border border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white" required>
                         <option value="shijas">Shijas</option>
                         <option value="swalih">Swalih</option>
                         <option value="sabith">Sabith</option>
@@ -87,10 +87,10 @@
                 </div>
 
                 <div>
-                    <input type="submit" value="Submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    <input type="submit" value="Submit" class="w-full bg-red-800 text-white py-2 px-4 rounded-md shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 </div>
             </form>
-            <button id="btn" class="mt-4 w-full bg-gray-800 text-white py-2 px-4 rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">View Payments</button>
+            <button id="btn" class="mt-4 w-full border-white border  text-white py-2 px-4 rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">View Payments</button>
         </div>
     </div>
 
@@ -115,6 +115,10 @@
     </div>
 
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.26/build/spline-viewer.js"></script>
+
+<!-- <spline-viewer url="https://prod.spline.design/wviEXB-3MgHxvZkz/scene.splinecode"></spline-viewer>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.26/build/spline-viewer.js"></script> -->
     <script type="module" src="/app.js"></script>
 </body>
 </html>
