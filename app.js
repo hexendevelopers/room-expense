@@ -51,3 +51,28 @@ btn.addEventListener("click", () => {
     document.getElementById('loading').style.display = 'none';
     document.getElementById('content').classList.remove('hidden');
 }, 3000);
+
+
+
+    // JavaScript to randomly change the background between two themes
+    document.addEventListener('DOMContentLoaded', () => {
+        const viewer = document.getElementById('splineViewer');
+        const urls = [
+            'https://prod.spline.design/T0IOnqPgTOUg9Dfh/scene.splinecode',
+            'https://prod.spline.design/wviEXB-3MgHxvZkz/scene.splinecode',
+            'https://prod.spline.design/xtUgW1etOEE2hO8J/scene.splinecode',
+            'https://prod.spline.design/6KfxOglBo6jn85jI/scene.splinecode'
+        ];
+
+        // Function to change the background randomly
+        function setRandomBackground() {
+            const randomIndex = Math.floor(Math.random() * urls.length);
+            viewer.setAttribute('url', urls[randomIndex]);
+        }
+
+        // Change the background on page load
+        setRandomBackground();
+    });
+
+
+ 
